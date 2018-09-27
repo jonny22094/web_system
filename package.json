@@ -1,0 +1,32 @@
+{
+  "name": "web_system",
+  "version": "0.0.1",
+  "description": "web_system",
+  "scripts": {
+    "watch": "./node_modules/.bin/webpack-dev-server --port 3000",
+    "build": "./node_modules/.bin/webpack --progress",
+    "clean": "rm -rf out"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "mobx": "^5.5.0",
+    "mobx-react": "^5.2.8",
+    "mobx-state-tree": "^3.4.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "styled-components": "^3.4.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.3",
+    "babel-plugin-styled-components": "^1.7.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
