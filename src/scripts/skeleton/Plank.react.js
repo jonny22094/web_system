@@ -1,12 +1,15 @@
 import React, {Component} from "react"
 import {PlankContainer} from "./styled"
+import OpenApps from "../components/Plank/OpenApps"
 
-export default class Plank extends Component {
+class Plank extends Component {
   render() {
     return (
       <PlankContainer>
-        Plank
+        <OpenApps/>
       </PlankContainer>
     )
   }
 }
+
+export default Plank;

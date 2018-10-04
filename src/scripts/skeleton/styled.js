@@ -15,5 +15,6 @@ export const PlankContainer = styled.div`
   width: 100vw;
   height: 50px;
 
+  background-color: ${_ => _.theme.colors.main};
   bottom: 0;
 `
