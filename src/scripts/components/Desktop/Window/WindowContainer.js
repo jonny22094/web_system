@@ -1,27 +1,32 @@
 import React, {Component} from "react"
 import Draggable from 'react-draggable'
-import {observer} from "mobx-react"
+import {inject ,observer} from "mobx-react"
 import {Container} from "./styled"
 
+@inject("window")
 @observer
 class WindowContainer extends Component {
   handleDrag = (e, ui) => {
-    this.props.data.newPosition({
-      x: this.props.data.position.x + ui.deltaX,
-      y: this.props.data.position.y + ui.deltaY
+    const {position} = this.props.window
+
+    position.set({
+      x: position.x + ui.deltaX,
+      y: position.y + ui.deltaY
     })
   }
 
   render() {
-    const {position} = this.props.data
+    const {position, onDragging, isHidden} = this.props.window
 
     return (
       <Draggable
         handle=".handle"
-        position={position}
+        position={position.get}
         onDrag={this.handleDrag}
+        onStart={onDragging}
+        onStop={onDragging}
       > 
-        <Container>
+        <Container hidden={isHidden}>
           {this.props.children}
         </Container>
       </Draggable>

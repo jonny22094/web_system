@@ -1,6 +1,8 @@
 import React, {Component} from "react"
 import {BarContainer, Button, Title} from "./styled"
+import {inject} from "mobx-react"
 
+@inject("window")
 class WindowBar extends Component {
   render() {
     const {
@@ -10,7 +12,7 @@ class WindowBar extends Component {
       close,
       hide,
       maximize
-    } = this.props.data
+    } = this.props.window
 
     return (
       <BarContainer className="handle" color={handleColor}>

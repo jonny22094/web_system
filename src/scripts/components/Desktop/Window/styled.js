@@ -8,6 +8,10 @@ export const Container = styled.div`
   height: 300px;
 
   background-color: ${_ => _.theme.colors.main};
+
+  &[hidden] {
+    display: none;
+  }
 `
 
 export const BarContainer = styled.div`
@@ -64,4 +68,16 @@ export const Title = styled.div`
 
   width: 100%;
   height: 100%;
+`
+
+export const ContentContainer = styled.div`
+  display: flex;
+  flex: 1;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+  }
 `

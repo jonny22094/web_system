@@ -1,14 +1,9 @@
-import {types} from "mobx-state-tree";
-import {Window} from "./models/Window";
-import {AppStore} from "./models/AppStore";
+import {types} from "mobx-state-tree"
+import {AppStore} from "./models/AppStore"
+import {WindowStore} from "./models/WindowsStore"
 
 export const Store = types.model("store", {
-  windows: types.optional(types.array(Window), [{
-    key: "1232413",
-    title: "Portfolio",
-    type: "link",
-    link: "rochalski.me"
-  }]),
+  windowsStore: types.optional(WindowStore, {}),
   appStore: types.optional(AppStore, {})
 })
 .views(self => ({
