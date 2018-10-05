@@ -1,4 +1,4 @@
-import {types} from "mobx-state-tree"
+import {types, getParent} from "mobx-state-tree"
 import {Size, Position} from "./windowModels/models"
 
 export const Window = types.model("window", {
@@ -29,7 +29,7 @@ export const Window = types.model("window", {
     self.isHidden = !self.isHidden
   },
   close: () => {
-
+    getParent(self, 2).closeWindow(self)
   },
   maximize: () => {
     self.isMaximize = !self.isMaximize
@@ -41,7 +41,7 @@ export const Window = types.model("window", {
 
     self.size.set({
       width: self.isMaximize ? window.innerWidth : 650,
-      height: self.isMaximize ? window.innerHeight - 45 : 400
+      height: self.isMaximize ? window.innerHeight - 54 : 400
     })
   }
 }))

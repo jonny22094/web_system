@@ -1,4 +1,4 @@
-import {types} from "mobx-state-tree"
+import {types, destroy} from "mobx-state-tree"
 import {Window} from "./Window"
 
 export const WindowStore = types.model("windowStore", {
@@ -16,7 +16,7 @@ export const WindowStore = types.model("windowStore", {
   }
 }))
 .actions(self => ({
-  closeWindow: () => {
-    
+  closeWindow: item => {
+    destroy(item)
   }
 }))
