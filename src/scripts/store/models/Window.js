@@ -6,10 +6,10 @@ export const Window = types.model("window", {
   title: types.string,
   isHidden: types.optional(types.boolean, false),
   isActive: types.optional(types.boolean, true),
-  isDregged: types.optional(types.boolean, false),
+  isDragged: types.optional(types.boolean, false),
   isMaximize: types.optional(types.boolean, false),
+  isResizable: types.optional(types.boolean, true),
   handleColor: types.optional(types.string, "#4C4C4C"),
-  resizable: types.optional(types.boolean, true),
   size: types.optional(Size, {}),
   position: types.optional(Position, {}),
   category: types.optional(types.string, "other"),
@@ -20,7 +20,7 @@ export const Window = types.model("window", {
 }))
 .actions(self => ({
   onDragging: () => {
-    self.isDregged = !self.isDregged
+    self.isDragged = !self.isDragged
   }
 }))
 .actions(self => ({
@@ -32,6 +32,16 @@ export const Window = types.model("window", {
 
   },
   maximize: () => {
-    
+    self.isMaximize = !self.isMaximize
+
+    self.position.set({
+      x: self.isMaximize ? 0 : 250,
+      y: self.isMaximize ? 0 : 250
+    })
+
+    self.size.set({
+      width: self.isMaximize ? window.innerWidth : 650,
+      height: self.isMaximize ? window.innerHeight - 45 : 400
+    })
   }
 }))

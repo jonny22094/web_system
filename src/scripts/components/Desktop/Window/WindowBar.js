@@ -8,7 +8,7 @@ class WindowBar extends Component {
     const {
       handleColor,
       title,
-      resizable,
+      isResizable,
       close,
       hide,
       maximize
@@ -18,7 +18,7 @@ class WindowBar extends Component {
       <BarContainer className="handle" color={handleColor}>
         <Button onClick={close}/>
         <Button onClick={hide}/>
-        {(resizable && <Button onClick={maximize}/>)}
+        {(isResizable && <Button onClick={maximize}/>)}
         <Title>{title}</Title>
       </BarContainer>
     )

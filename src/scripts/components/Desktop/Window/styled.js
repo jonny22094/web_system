@@ -4,10 +4,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 450px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
 
   background-color: ${_ => _.theme.colors.main};
+  border: 2px solid ${_ => _.theme.colors.active};
 
   &[hidden] {
     display: none;
@@ -72,6 +73,7 @@ export const Title = styled.div`
 
 export const ContentContainer = styled.div`
   display: flex;
+  position: relative;
   flex: 1;
 
   iframe {
@@ -79,5 +81,17 @@ export const ContentContainer = styled.div`
     height: 100%;
 
     border: 0;
+  }
+`
+
+export const Curtain = styled.div`
+  display: block;
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  &[hidden] {
+    display: none;
   }
 `
