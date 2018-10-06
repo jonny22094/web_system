@@ -20,7 +20,7 @@ class WindowContent extends Component {
 
     return (
       <ContentContainer>
-        <iframe src="http://rochalski.me/"/>
+        {this.createElement()}
         <Curtain hidden={!isDragged}/>
       </ContentContainer>
     )

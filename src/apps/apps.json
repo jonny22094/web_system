@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Do It",
+    "handleColor": "",
+    "size": {
+      "width": 370,
+      "height": 650
+    },
+    "category": "home",
+    "type": "link",
+    "link": "http://rochalski.me/"
+  },
+  {
+    "title": "Portfolio",
+    "handleColor": "#18111D",
+    "category": "web",
+    "type": "link",
+    "link": "http://rochalski.me/"
+  }
+]

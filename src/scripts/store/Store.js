@@ -7,7 +7,4 @@ export const Store = types.model("store", {
   appStore: types.optional(AppStore, {})
 })
 .views(self => ({
-  get getWindows() {
-    return self.windows
-  }
 }))

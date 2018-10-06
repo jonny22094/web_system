@@ -48,6 +48,7 @@ class WindowContainer extends Component {
           onStop={onDragging}
       >
         <Resizable
+          style={{position: "absolute"}}
           size={size.get}
           enable={{
             top: isResizable,

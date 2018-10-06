@@ -7,8 +7,8 @@ export default class Desktop extends Component {
   render() {
     return (
       <DesktopContainer>
-        <Icons/>
         <Windows/>
+        <Icons/>
       </DesktopContainer>
     )
   }

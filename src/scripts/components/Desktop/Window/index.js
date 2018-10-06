@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import WindowContainer from "./WindowContainer"
 import WindowBar from "./WindowBar"
 import WindowContent from "./WindowContent"
-import {inject, observer} from "mobx-react"
+import {observer} from "mobx-react"
 
 
 @observer

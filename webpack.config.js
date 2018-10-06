@@ -16,7 +16,12 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
-      }
+      },
+      {
+        type: 'javascript/auto',
+        test: /\.json$/,
+        use: "json-loader"
+      },
     ]
   },
   plugins: [

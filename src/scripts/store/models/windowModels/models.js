@@ -20,8 +20,8 @@ export const Size = types.model("size", {
 }))
 
 export const Position = types.model("position", {
-  x: types.optional(types.number, 300),
-  y: types.optional(types.number, 200)
+  x: types.optional(types.number, 100),
+  y: types.optional(types.number, 100)
 })
 .views(self => ({
   get get() {
