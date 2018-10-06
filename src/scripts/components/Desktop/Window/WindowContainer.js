@@ -20,8 +20,12 @@ class WindowContainer extends Component {
     const {size, position} = this.props.window
     
     position.set({
-      x: position.x + (!!(dir === "left" || dir === "bottomLeft" || dir === "topLeft") ? e.movementX : 0),
-      y: position.y + (!!(dir === "top" || dir === "topRight" || dir === "topLeft") ? e.movementY : 0)
+      x: position.x + (!!(
+        (dir === "left" || dir === "bottomLeft" || dir === "topLeft")
+        && ref.clientWidth > 250) ? e.movementX : 0),
+      y: position.y + (!!(
+        (dir === "top" || dir === "topRight" || dir === "topLeft")
+        && ref.clientHeight > 250) ? e.movementY : 0)
     })
 
     size.set({
@@ -48,7 +52,7 @@ class WindowContainer extends Component {
           onStop={onDragging}
       >
         <Resizable
-          style={{position: "absolute"}}
+          style={{position: "absolute", zIndex: 1}}
           size={size.get}
           enable={{
             top: isResizable,
@@ -63,8 +67,8 @@ class WindowContainer extends Component {
           onResize={this.handleResize}
           onResizeStart={onDragging}
           onResizeStop={onDragging}
-          minWidth={200}
-          minHeight={200}
+          minWidth={250}
+          minHeight={250}
         >
           <Container hidden={isHidden}>         
             {this.props.children}

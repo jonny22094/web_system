@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import {IocnsContainer} from "./styled"
+import {IocnsContainer, Icon} from "./styled"
 import {inject} from "mobx-react"
 import Apps from "../../../../apps/apps"
 
@@ -11,9 +11,10 @@ class Icons extends Component {
     return (
       <IocnsContainer>
         {Apps.map(({title, icon}, key) => 
-          <div key={key} onClick={() => openWindow(key)}>
+          <Icon key={key} onClick={() => openWindow(key)}>
             <i className="fab fa-adn"/>
-          </div>
+            <p>{title}</p>
+          </Icon>
         )}
       </IocnsContainer>
     )
