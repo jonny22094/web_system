@@ -9,10 +9,6 @@ export const Container = styled.div`
 
   background-color: ${_ => _.theme.colors.main};
   border: 2px solid ${_ => _.theme.colors.active};
-
-  &[hidden] {
-    display: none;
-  }
 `
 
 export const BarContainer = styled.div`

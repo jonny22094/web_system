@@ -2,12 +2,18 @@ const path = require("path")
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-  entry: "./src/bootstrap.js",
+  context: path.resolve(__dirname, 'src'),
+  entry: "./bootstrap.js",
   output: {
     filename: "./bundle.js",
     path: path.resolve(__dirname, "/build")
   },
   mode: "development",
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, 'src'),
+    }
+  },
   module: {
     rules: [
       {
@@ -26,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html"
+      template: "./index.html"
     })
   ]
 }

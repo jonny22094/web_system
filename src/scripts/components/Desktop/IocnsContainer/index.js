@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import {IocnsContainer, Icon} from "./styled"
 import {inject} from "mobx-react"
-import Apps from "../../../../apps/apps"
+import Apps from "src/apps/apps"
 
 @inject("store")
 class Icons extends Component {

@@ -1,16 +1,10 @@
 import {types, destroy} from "mobx-state-tree"
 import {Window} from "./Window"
 import {randomBytes} from "crypto"
-import Apps from "../../../apps/apps"
+import Apps from "src/apps/apps"
 
-export const WindowStore = types.model("windowStore", {
-  windows: types.optional(types.array(Window), [{
-    key: "1232413",
-    title: "Portfolio",
-    type: "link",
-    link: "http://rochalski.me/"
-  }]),
-
+export const WindowsStore = types.model("windowsStore", {
+  windows: types.optional(types.array(Window), []),
 })
 .views(self => ({
   get getWindows() {
@@ -18,9 +12,13 @@ export const WindowStore = types.model("windowStore", {
   }
 }))
 .actions(self => ({
+  searchActive: () => {
+    self.getWindows.map(item => item.isActive ? item.active() : '')
+  },
   openWindow: id => {
+    self.searchActive()
     self.windows.push({
-      key: randomBytes(256).toString("hex"),
+      key: randomBytes(64).toString("hex"),
       ...Apps[id],
     })
   },

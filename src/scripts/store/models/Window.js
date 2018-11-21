@@ -24,9 +24,17 @@ export const Window = types.model("window", {
   }
 }))
 .actions(self => ({
+  active: () => {
+    self.isActive = !self.isActive
+  },
   hide: () => {
+    if (getParent(self, 2).getWindows.length > 1) {
+      getParent(self, 2).searchActive()
+    }
+
     self.isActive = self.isHidden
     self.isHidden = !self.isHidden
+    console.log(self.isActive)
   },
   close: () => {
     getParent(self, 2).closeWindow(self)

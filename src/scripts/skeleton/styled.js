@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ActiveButton} from "../shared/styled"
+import {ActiveButton} from "src/shared/styled"
 
 export const DesktopContainer = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const PlankContainer = styled.div`
 
   background-color: ${_ => _.theme.colors.main};
   bottom: 0;
-  `
+`
 
 export const MenuButton = styled(ActiveButton)`
   display: flex;

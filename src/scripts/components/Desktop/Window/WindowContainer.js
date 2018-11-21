@@ -52,7 +52,10 @@ class WindowContainer extends Component {
           onStop={onDragging}
       >
         <Resizable
-          style={{position: "absolute", zIndex: 1}}
+          style={{
+            position: "absolute",
+            zIndex: 1,
+            display: isHidden ? 'none' : 'block'}}
           size={size.get}
           enable={{
             top: isResizable,
@@ -70,7 +73,7 @@ class WindowContainer extends Component {
           minWidth={250}
           minHeight={250}
         >
-          <Container hidden={isHidden}>         
+          <Container>         
             {this.props.children}
           </Container>
         </Resizable>

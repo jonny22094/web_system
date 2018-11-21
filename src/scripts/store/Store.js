@@ -1,9 +1,9 @@
 import {types} from "mobx-state-tree"
 import {AppStore} from "./models/AppStore"
-import {WindowStore} from "./models/WindowsStore"
+import {WindowsStore} from "./models/WindowsStore"
 
 export const Store = types.model("store", {
-  windowsStore: types.optional(WindowStore, {}),
+  windowsStore: types.optional(WindowsStore, {}),
   appStore: types.optional(AppStore, {})
 })
 .views(self => ({

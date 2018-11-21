@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import {ActiveButton} from "../../../shared/styled"
 
 export const MenuContainer = styled.div`
   position: absolute;
