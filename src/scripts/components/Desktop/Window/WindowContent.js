@@ -5,22 +5,15 @@ import {inject, observer} from "mobx-react"
 @inject("window")
 @observer
 class WindowContent extends Component {
-
-  createElement = () => {
-    const {type, link} = this.props.window
-
-    return (!!(type === "link") ?
-      <iframe src={link} allowFullScreen/> :
-      React.createElement(require(`../../../../apps/${link}`))
-    )
-  }
-
   render() {
-    const {isDragged} = this.props.window
+    const {isDragged, type, link} = this.props.window
 
     return (
       <ContentContainer>
-        {this.createElement()}
+        {(type === "link") ?
+          <iframe src={link} allowFullScreen/> :
+          React.createElement(require(`../../../../apps/${link}`))
+        }
         <Curtain hidden={!isDragged}/>
       </ContentContainer>
     )

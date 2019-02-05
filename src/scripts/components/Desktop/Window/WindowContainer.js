@@ -1,13 +1,13 @@
 import React, {Component} from "react"
-import Draggable from 'react-draggable'
-import Resizable from 're-resizable'
+import Draggable from "react-draggable"
+import Resizable from "re-resizable"
 import {inject ,observer} from "mobx-react"
 import {Container} from "./styled"
 
 @inject("window")
 @observer
 class WindowContainer extends Component {
-  handleDrag = (e, ui) => {
+  handleDrag = ({}, ui) => {
     const {position} = this.props.window
 
     position.set({
