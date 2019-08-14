@@ -1,12 +1,10 @@
-import React, {Component} from "react"
-import styled, {ThemeProvider} from "styled-components"
-import {Provider} from "mobx-react"
-import {Store} from "./store/Store"
-import Desktop from "./skeleton/Desktop.react"
-import Plank from "./skeleton/Plank.react"
-import {theme} from "../config/config"
-
-
+import React, {Component} from 'react'
+import styled, {ThemeProvider} from 'styled-components'
+import {Provider} from 'mobx-react'
+import {Store} from './store/Store'
+import Desktop from './skeleton/Desktop.react'
+import Plank from './skeleton/Plank.react'
+import {theme} from '../config/config'
 
 const Container = styled.div`
   display: flex;
@@ -23,8 +21,8 @@ export default class App extends Component {
       <Provider store={Store.create()}>
         <ThemeProvider theme={theme}>
           <Container>
-            <Desktop/>
-            <Plank/>
+            <Desktop />
+            <Plank />
           </Container>
         </ThemeProvider>
       </Provider>

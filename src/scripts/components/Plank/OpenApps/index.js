@@ -1,8 +1,8 @@
-import React, {Component} from "react"
-import {OpenContainer, AppLabel} from "./styled"
-import {inject, observer} from "mobx-react"
+import React, {Component} from 'react'
+import {OpenContainer, AppLabel} from './styled'
+import {inject, observer} from 'mobx-react'
 
-@inject("store")
+@inject('store')
 @observer
 class OpenApps extends Component {
   render() {
@@ -11,12 +11,8 @@ class OpenApps extends Component {
     return (
       <OpenContainer>
         {getWindows.map(({key, title, isActive, hide}) => (
-          <AppLabel 
-            key={key}
-            isActive={isActive}
-            onClick={hide}
-          >
-          {title}
+          <AppLabel key={key} isActive={isActive} onClick={hide}>
+            {title}
           </AppLabel>
         ))}
       </OpenContainer>

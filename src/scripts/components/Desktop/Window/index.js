@@ -1,9 +1,8 @@
-import React, {Component} from "react"
-import WindowContainer from "./WindowContainer"
-import WindowBar from "./WindowBar"
-import WindowContent from "./WindowContent"
-import {observer} from "mobx-react"
-
+import React, {Component} from 'react'
+import WindowContainer from './WindowContainer'
+import WindowBar from './WindowBar'
+import WindowContent from './WindowContent'
+import {observer} from 'mobx-react'
 
 @observer
 class Window extends Component {
@@ -11,7 +10,7 @@ class Window extends Component {
     return (
       <WindowContainer>
         <WindowBar />
-        <WindowContent/>
+        <WindowContent />
       </WindowContainer>
     )
   }

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const IocnsContainer = styled.div`
   position: absolute;
@@ -18,10 +18,10 @@ export const Icon = styled.div`
     display: flex;
     justify-content: center;
     font-size: 45px;
-    color: black; 
+    color: black;
   }
 
   p {
-    margin: 5px 0; 
+    margin: 5px 0;
   }
 `

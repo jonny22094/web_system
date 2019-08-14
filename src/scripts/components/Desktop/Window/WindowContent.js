@@ -1,8 +1,8 @@
-import React, {Component} from "react"
-import {ContentContainer, Curtain} from "./styled"
-import {inject, observer} from "mobx-react"
+import React, {Component} from 'react'
+import {ContentContainer, Curtain} from './styled'
+import {inject, observer} from 'mobx-react'
 
-@inject("window")
+@inject('window')
 @observer
 class WindowContent extends Component {
   render() {
@@ -10,11 +10,12 @@ class WindowContent extends Component {
 
     return (
       <ContentContainer>
-        {(type === "link") ?
-          <iframe src={link} allowFullScreen/> :
+        {type === 'link' ? (
+          <iframe src={link} allowFullScreen />
+        ) : (
           React.createElement(require(`../../../../apps/${link}`))
-        }
-        <Curtain hidden={!isDragged}/>
+        )}
+        <Curtain hidden={!isDragged} />
       </ContentContainer>
     )
   }

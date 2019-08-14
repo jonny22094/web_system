@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const OpenContainer = styled.div`
   display: flex;
@@ -13,5 +13,5 @@ export const AppLabel = styled.div`
   justify-content: center;
 
   color: ${_ => _.theme.colors.text};
-  background-color: ${_ => _.isActive ? _.theme.colors.active : "rgba(0, 0, 0, 0)"};
+  background-color: ${_ => (_.isActive ? _.theme.colors.active : 'rgba(0, 0, 0, 0)')};
 `

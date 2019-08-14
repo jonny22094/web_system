@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -56,7 +56,7 @@ export const Button = styled.a`
 export const Title = styled.div`
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   position: absolute;
 
   cursor: default;

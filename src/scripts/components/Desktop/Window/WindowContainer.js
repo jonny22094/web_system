@@ -1,10 +1,10 @@
-import React, {Component} from "react"
-import Draggable from "react-draggable"
-import Resizable from "re-resizable"
-import {inject ,observer} from "mobx-react"
-import {Container} from "./styled"
+import React, {Component} from 'react'
+import Draggable from 'react-draggable'
+import Resizable from 're-resizable'
+import {inject, observer} from 'mobx-react'
+import {Container} from './styled'
 
-@inject("window")
+@inject('window')
 @observer
 class WindowContainer extends Component {
   handleDrag = ({}, ui) => {
@@ -12,50 +12,45 @@ class WindowContainer extends Component {
 
     position.set({
       x: position.x + ui.deltaX,
-      y: position.y + ui.deltaY
+      y: position.y + ui.deltaY,
     })
   }
 
   handleResize = (e, dir, ref) => {
     const {size, position} = this.props.window
-    
+
     position.set({
-      x: position.x + (!!(
-        (dir === "left" || dir === "bottomLeft" || dir === "topLeft")
-        && ref.clientWidth > 250) ? e.movementX : 0),
-      y: position.y + (!!(
-        (dir === "top" || dir === "topRight" || dir === "topLeft")
-        && ref.clientHeight > 250) ? e.movementY : 0)
+      x:
+        position.x +
+        (!!((dir === 'left' || dir === 'bottomLeft' || dir === 'topLeft') && ref.clientWidth > 250) ? e.movementX : 0),
+      y:
+        position.y +
+        (!!((dir === 'top' || dir === 'topRight' || dir === 'topLeft') && ref.clientHeight > 250) ? e.movementY : 0),
     })
 
     size.set({
       width: ref.clientWidth,
-      height: ref.clientHeight
+      height: ref.clientHeight,
     })
   }
 
   render() {
-    const {
-      position,
-      onDragging,
-      isHidden,
-      size,
-      isResizable
-    } = this.props.window
+    const {position, onDragging, isHidden, size, isResizable} = this.props.window
 
     return (
       <Draggable
-          handle=".handle"
-          position={position.get}
-          onDrag={this.handleDrag}
-          onStart={onDragging}
-          onStop={onDragging}
+        handle=".handle"
+        position={position.get}
+        onDrag={this.handleDrag}
+        onStart={onDragging}
+        onStop={onDragging}
       >
         <Resizable
           style={{
-            position: "absolute",
+            position: 'absolute',
             zIndex: 1,
-            display: isHidden ? 'none' : 'block'}}
+            display: isHidden ? 'none' : 'block',
+          }}
           size={size.get}
           enable={{
             top: isResizable,
@@ -65,7 +60,7 @@ class WindowContainer extends Component {
             topRight: isResizable,
             bottomRight: isResizable,
             bottomLeft: isResizable,
-            topLeft: isResizable
+            topLeft: isResizable,
           }}
           onResize={this.handleResize}
           onResizeStart={onDragging}
@@ -73,9 +68,7 @@ class WindowContainer extends Component {
           minWidth={250}
           minHeight={250}
         >
-          <Container>         
-            {this.props.children}
-          </Container>
+          <Container>{this.props.children}</Container>
         </Resizable>
       </Draggable>
     )
